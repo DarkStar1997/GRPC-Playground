@@ -1,0 +1,39 @@
+// helloworld.proto
+syntax = "proto3";
+
+package helloworld;
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc SayGoodbye (GoodbyeRequest) returns (GoodbyeReply);
+  rpc RecordStream (stream StreamRequest) returns (StreamReply);
+  rpc Chat (stream ChatMessage) returns (stream ChatMessage);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
+
+message GoodbyeRequest {
+  string name = 1;
+}
+
+message GoodbyeReply {
+  string message = 1;
+}
+
+message StreamRequest {
+  string data = 1;
+}
+
+message StreamReply {
+  string summary = 1;
+}
+
+message ChatMessage {
+  string message = 1;
+}
